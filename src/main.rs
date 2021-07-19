@@ -25,6 +25,7 @@ async fn delay(seconds: u64) -> String {
     format!("Waited for {} seconds", seconds)
 }
 
+// Rust's Futures are a form of cooperative multitasking.
 #[get("/blocking_task")]
 async fn blocking_task() -> io::Result<Vec<u8>> {
     // In a real app, use rocket::fs::NamedFile or tokio::fs::File.
@@ -37,6 +38,22 @@ async fn blocking_task() -> io::Result<Vec<u8>> {
     Ok(vec)
 }
 
+/*
+Any number of dynamic path segments are allowed.
+A path segment can be of any type, including your own, as long as the type
+implements the FromParam trait. We call these types parameter guards.
+https://api.rocket.rs/v0.5-rc/rocket/request/trait.FromParam.html
+*/
+#[get("/hello/<name>/<age>/<cool>")]
+fn hello(name: &str, age: u8, cool: bool) -> String {
+    if cool {
+        format!("You're a cool {} year old, {}!", age, name)
+    } else {
+        format!("{}, we need to talk about your coolness.", name)
+    }
+}
+
+// Catches all route errors
 #[catch(default)]
 fn default(status: Status, req: &Request) -> String {
     format!("{} ({})", status, req.uri())
@@ -53,6 +70,6 @@ fn not_found(req: &Request) -> String {
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index, num, delay, blocking_task])
+        .mount("/", routes![index, num, delay, blocking_task, hello])
         .register("/", catchers![default])
 }
