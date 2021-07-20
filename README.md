@@ -1,5 +1,5 @@
 # Rust Boilerplate - Starship [WIP]
-![main](https://github.com//sinharaksh1t/rust-boilerplate-starship/actions/workflows/main.yml/badge.svg)
+![main](https://github.com//sinharaksh1t/rust-boilerplate-starship/actions/workflows/ci.yml/badge.svg)
 ### Prerequisites
 * Setup rust using [this](https://www.rust-lang.org/tools/install) link.
 
