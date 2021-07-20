@@ -1,6 +1,6 @@
 ### Thank You!
 
-I would like to Thank You, for considering contributing to this tiny module. I will be very grateful for your contribution.
+We would like to thank you for considering to contribute to this module. We are forever grateful to our contributors.
 
 Important: Following these guidelines help to communicate that you respect the time of the developers managing and developing this open source project. In return, they should reciprocate that respect in addressing your issue, assessing changes, and helping you finalize your pull requests.
 
