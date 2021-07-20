@@ -11,4 +11,4 @@ cargo run
 
 #### Contributions
 
-[Read Guideline](.github/contribution-guide.md)
+Please read [the following contribution guildelines](.github/contribution-guide.md) if you'd like to contribute to this project. (Thank you!)
